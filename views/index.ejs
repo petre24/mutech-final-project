@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      const currentSong = <%- JSON.stringify(locals.song) || 'undefined' %>
+    </script>
+    <script src="https://unpkg.com/tone@13.8.25/build/Tone.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"
+      defer
+    ></script>
+    <script src="/script.js" defer></script>
+    <title>Piano</title>
+  </head>
+  <body>
+    <div class="buttons">
+      <% if (locals.song == null ) { %>
+      <button class="record-button btn">Record</button>
+      <button class="save-button btn">Save</button>
+      <% } else { %>
+      <a href="/" class="btn">Record New Song</a>
+      <% } %>
+      <button class="play-button btn <%= locals.song != null ? 'show' : '' %>">
+        Play
+      </button>
+    </div>
+    <a href="#" class="btn song-link">View Song</a>
+    <div class="piano">
+      <div data-note="C3" class="key white"></div>
+      <div data-note="C#3" class="key black"></div>
+      <div data-note="D3" class="key white"></div>
+      <div data-note="D#3" class="key black"></div>
+      <div data-note="E3" class="key white"></div>
+      <div data-note="F3" class="key white"></div>
+      <div data-note="F#3" class="key black"></div>
+      <div data-note="G3" class="key white"></div>
+      <div data-note="G#3" class="key black"></div>
+      <div data-note="A3" class="key white"></div>
+      <div data-note="A#3" class="key black"></div>
+      <div data-note="B3" class="key white"></div>
+      <div data-note="C4" class="key white"></div>
+      <div data-note="C#4" class="key black"></div>
+      <div data-note="D4" class="key white"></div>
+      <div data-note="D#4" class="key black"></div>
+      <div data-note="E4" class="key white"></div>
+      <div data-note="F4" class="key white"></div>
+      <div data-note="F#4" class="key black"></div>
+      <div data-note="G4" class="key white"></div>
+      <div data-note="G#4" class="key black"></div>
+      <div data-note="A4" class="key white"></div>
+      <div data-note="A#4" class="key black"></div>
+      <div data-note="B4" class="key white"></div>
+      <div data-note="C5" class="key white"></div>
+    </div>
+  </body>
+</html>
