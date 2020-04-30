@@ -36,9 +36,8 @@ let noteStartTime;
 let noteEndTime;
 let songNotes = currentSong && currentSong.notes;
 
-console.log(currentSong);
-
 const synth = new Tone.Synth();
+synth.oscillator.type = "triangle";
 
 synth.toMaster();
 
